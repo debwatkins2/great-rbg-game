@@ -5,6 +5,18 @@ var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easyBtn");
+var hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", function(){
+  hardBtn.classList.remove("selected");
+  easyBtn.classList.add("selected");
+});
+
+hardBtn.addEventListener("click", function() {
+  hardBtn.classList.add("selected");
+  easyBtn.classList.remove("selected");
+});
 
 resetButton.addEventListener("click", function() {
 
@@ -30,9 +42,10 @@ for (var i = 0; i < squares.length; i++) {
   squares[i].addEventListener("click", function() {
 
     var clickedColor = this.style.background;
-  
+
     if (clickedColor === pickedColor) {
     messageDisplay.textContent = "Correct!"
+    resetButton.textContent = "Play Again?"
     changeColors(clickedColor);
     h1.style.background = clickedColor;
   } else {
