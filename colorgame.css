@@ -72,3 +72,19 @@ button:hover {
 	color: white;
 	background: steelblue;
 }
+
+
+@media screen and (max-width: 482px) {
+  h1 {
+    font-size: 130%;
+  }
+
+  .square {
+    width: 25%;
+    height: 16%;
+    margin-left: 5%;
+    margin-top: 8%:
+  }
+
+
+}
